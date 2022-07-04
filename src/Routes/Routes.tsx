@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { FirstPage } from 'Pages/FirstPage/FirstPage';
 import { SecondPage } from 'Pages/SecondPage/SecondPage';
 import { Pages } from 'Pages/Pages';
@@ -13,6 +13,7 @@ export const RoutesLayout: FC<Props> = () => {
         <Route path='/firstPage' element={<FirstPage />} />
         <Route path='/secondPage' element={<SecondPage />} />
         <Route path='/' element={<Pages />} />
+        <Route path='*' element={<Navigate to='/' />} />
       </Routes>
       <Modal />
     </>
